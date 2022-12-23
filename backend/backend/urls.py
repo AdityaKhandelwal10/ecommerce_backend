@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', obtain_auth_token),
 
-    path('sellers/', include('sellers.urls'))
+    path('sellers/', include('sellers.urls')),
+    path('buyers/', include('buyers.urls')),
 ]

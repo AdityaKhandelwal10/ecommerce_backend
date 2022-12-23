@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import CartItem, Order
 
-# Register your models here.
+@admin.register(CartItem)
+class CartItemAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Order)
+class OrderDetailAdmin(admin.ModelAdmin):
+    pass

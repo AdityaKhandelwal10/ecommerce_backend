@@ -21,7 +21,7 @@ class Category(models.Model):
 
 class Product(models.Model):
 
-    store = models.ForeignKey(Store, on_delete=models.CASCADE)
+    store = models.ForeignKey(Store, related_name='store', on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     product_name = models.CharField(max_length = 50, blank= False)
     description = models.TextField()

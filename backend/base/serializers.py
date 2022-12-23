@@ -6,3 +6,4 @@ class SellerRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['phone', 'password']
+
