@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     #third-party apps
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
     #Apps
     'base',
     'buyers',
@@ -113,11 +114,14 @@ AUTHENTICATION_BACKENDS =[
     'base.backends.CustomModelBackend'
 ]
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework.authentication.TokenAuthentication',  # <-- And here
-#     ],
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # <-- And here
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/

@@ -5,17 +5,18 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 
 class CustomUserManager(BaseUserManager):
 
-    def create_user(self, phone):
+    def create_user(self, phone, password=None, **extra_fields):
         if not phone:
             raise ValueError('Users must have a Phone number')
         
-        user = self.model(phone = phone)
-        user.set_unusable_password()
+        user = self.model(phone = phone, **extra_fields)
+        # user.set_unusable_password()
+        user.set_password(password)
         user.save()
         return user
 
     def create_superuser(self, phone, password = None):
-        user = self.model(phone = phone)
+        user = self.create_user(phone = phone, password = password)
         user.set_password(password)
         user.is_staff = True
         user.is_superuser = True
