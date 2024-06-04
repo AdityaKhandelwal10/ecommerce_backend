@@ -1,7 +1,6 @@
-# Dukaan Assignment 
+# Backend for an ecommerce application
 
-Dukaan is a tech platform that enables a business to quickly set up and run an online retail store.
-
+This is an attempt to create a backend for an ecommerce website. 
 ## Functionality:
   1. Register & login with mobile number and OTP as a seller or a buyer. 
     - Created Serializer and views for Login Request, OTP Request, OTP Response, SignUp. 
